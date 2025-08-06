@@ -41,6 +41,18 @@ Selecciona una columna:
 
 ---
 
+## Configuració
+
+Al fitxer `Minimax.h` pots modificar les següents directives `#define` per personalitzar el joc:
+
+```c
+#define N 8
+#define profunditat 6
+```
+
+- `N` estableix la mida del tauler de Connect4, permetent ampliar o reduir les dimensions de la graella.
+- `profunditat` controla la profunditat de la cerca de l’algorisme Minimax, i afecta directament la dificultat de la IA. Augmentar aquest valor fa que la IA pensi més jugades endavant, fent-la més forta però també més lenta.
+  
 ##  Compilació
 
 ### Opció ràpida (amb script bash)
