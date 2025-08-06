@@ -87,5 +87,4 @@ Un cop compilat, pots executar el joc amb:
 
 - Sistema Linux/macOS amb `gcc` instal·lat
 - Terminal compatible amb seqüències ANSI (per veure els colors)
-- 
 ---
