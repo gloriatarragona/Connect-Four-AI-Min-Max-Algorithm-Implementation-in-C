@@ -4,15 +4,16 @@
 
 
 typedef struct node {
-struct node **fills; //array dinàmic de pointers a Node
-int n_fills; //tamany de l’array dinàmic
+struct node **fills; //array dinï¿½mic de pointers a Node
+int n_fills; //tamany de lï¿½array dinï¿½mic
 char tauler[N][N];
-double valor; //el valor del node (F. Heurística)
+double valor; //el valor del node (F. Heurï¿½stica)
  } Node;
 
 
 
 Node * creaNode(Node *pare, int nivell, int numDeFill,int n_nivells);
+ void trobarTauler(Node*p);
 void creaNivell(Node *pare,int nivell, int n_nivells);
 void creaArbre(Node *arrel, int n, int n_nivells);
 void esborrarArbre(Node*p,int n,int n_nivells);

@@ -82,7 +82,7 @@ return 0;
  int humaAordinador(int col){ //Pasem de una columna (1-8) a una columna (0-7)
  return col-1;
  }
- int ordinadorAhuma(int col){ //Inversa de la funció anterior
+ int ordinadorAhuma(int col){ //Inversa de la funciï¿½ anterior
  return col+1;
  }
 void imprimirTauler(char tauler[N][N]) { //Imprimeix el tauler d'un node
@@ -93,13 +93,13 @@ void imprimirTauler(char tauler[N][N]) { //Imprimeix el tauler d'un node
         for(int j=0;j<N;j++){
 
                 if(tauler[i][j]=='1'){
-            printf(AZUL_T " O " RESET_COLOR, tauler[i][j]);
+            printf(AZUL_T " O " RESET_COLOR);
                 }
                 if(tauler[i][j]=='2'){
-            printf(ROJO_T " X " RESET_COLOR, tauler[i][j]);
+            printf(ROJO_T " X " RESET_COLOR);
                 }
                 if(tauler[i][j]=='0'){
-                printf(" 0 " , tauler[i][j]);
+                printf(" 0 ");
                 }
 
 
@@ -138,7 +138,7 @@ void ferTirada(char tauler[N][N],int col, int jugador){ //Fa la tirada d'un juga
         col=humaAordinador(col);
             }
     }
-    if(columnaPlena(tauler,col)){ //Cas 2: Introduim una columna que està plena (Error)
+    if(columnaPlena(tauler,col)){ //Cas 2: Introduim una columna que estï¿½ plena (Error)
         while(columnaPlena(tauler,col)==1){
         printf("Error: la columna seleccionada esta plena, selecciona una altre columna\n");
         scanf("%d",&col);
@@ -171,7 +171,7 @@ int finalJoc(char tauler[N][N]){ //Verifica quin jugador ha guanyat
     return 0;
 
 }
-void trobarTauler(Node*p){ //Busca quina és la millor tirada despres de fer el Minimax
+void trobarTauler(Node*p){ //Busca quina ï¿½s la millor tirada despres de fer el Minimax
 
     Node **aux=malloc(p->n_fills*sizeof(Node));
     int opcions=0;
@@ -188,7 +188,7 @@ void trobarTauler(Node*p){ //Busca quina és la millor tirada despres de fer el M
         }
 
     }
-    copiaTauler(p->tauler,aux[rand()%(opcions)]->tauler); //Si dos taulers tenen la mateixa puntuació tria un aleatoriament
+    copiaTauler(p->tauler,aux[rand()%(opcions)]->tauler); //Si dos taulers tenen la mateixa puntuaciï¿½ tria un aleatoriament
     return ;
 }
 void copiaTauler(char taulerD[N][N],char taulerOr[N][N]){ //Copia el tualer d'un node en el tauler d'un altre node
@@ -210,21 +210,21 @@ int funcioHeuristica(char tauler[N][N]){ //Calcula els valors dels nodes
             return valor;
     }
 
-    for(int i=0;i<N;i++){ //Mira els diferents subconjunts de 4 on només un dels jugadors te fitxes
+    for(int i=0;i<N;i++){ //Mira els diferents subconjunts de 4 on nomï¿½s un dels jugadors te fitxes
         for(int j=0;j<N;j++){
 
         if(j<N-3){
             if(tauler[i][j]!='2' && tauler[i][j+1]!='2' && tauler[i][j+2]!='2' && tauler[i][j+3]!='2'){
             for(int k=0;k<4;k++){
             if(tauler[i][j+k]=='1'){
-                    valor=valor-profunditat; //Resta una quantitat per cada fitxa que té la persona
+                    valor=valor-profunditat; //Resta una quantitat per cada fitxa que tï¿½ la persona
             }
             }
             }
             if(tauler[i][j]!='1' && tauler[i][j+1]!='1' && tauler[i][j+2]!='1' && tauler[i][j+3]!='1'){
             for(int k=0;k<4;k++){
             if(tauler[i][j+k]=='2'){
-                    valor=valor+(profunditat/2); //Suma una quantita per cada fitxa que té l'ordinador
+                    valor=valor+(profunditat/2); //Suma una quantita per cada fitxa que tï¿½ l'ordinador
             }
             }
             }
@@ -383,7 +383,7 @@ int funcioHeuristica2(char tauler[N][N]){ //Calcula els valors dels nodes
     }
     return valor;
 }
-void menu(void){ //Printeja el menú de benvinguda
+void menu(void){ //Printeja el menï¿½ de benvinguda
     for(int i=0;i<50;i++){
     printf("+");
     }
@@ -436,7 +436,7 @@ void menu(void){ //Printeja el menú de benvinguda
     }
     printf("\n");
 }
-void exitMenuGuanyador(void){ //Printeja el menú de si guanya l'humà
+void exitMenuGuanyador(void){ //Printeja el menï¿½ de si guanya l'humï¿½
     printf("\n");
      for(int i=0;i<50;i++){
     printf("+");
@@ -511,7 +511,7 @@ void exitMenuGuanyador(void){ //Printeja el menú de si guanya l'humà
     }
     printf("\n");
 }
-void exitMenuPerdedor(void){ //printeja el menú de si perd l'humà
+void exitMenuPerdedor(void){ //printeja el menï¿½ de si perd l'humï¿½
     printf("\n");
      for(int i=0;i<50;i++){
     printf("+");
@@ -586,7 +586,7 @@ void exitMenuPerdedor(void){ //printeja el menú de si perd l'humà
     }
     printf("\n");
 }
-void exitMenuEmpat(void){ //Printeja el menú d'empat
+void exitMenuEmpat(void){ //Printeja el menï¿½ d'empat
     printf("\n");
      for(int i=0;i<50;i++){
     printf("+");
@@ -674,17 +674,17 @@ Node *arrel=malloc(sizeof(Node));
     char inici;
     scanf("%c",&inici);
     if(inici=='\n'){
-    system("cls");
+    system("clear");
     printf("\nSTART\n");
     imprimirTauler(arrel->tauler);
     int player;
     int col;
-    for(int i=0;i<(N*N);i++){ //Triem el N*N doncs és el nombre màxim de movimients que es poden fer en una partida
-        if(i>6){ //Comprova el 4 en linea només si hi ha ja 4 fitxes d'un jugador al tauler
+    for(int i=0;i<(N*N);i++){ //Triem el N*N doncs ï¿½s el nombre mï¿½xim de movimients que es poden fer en una partida
+        if(i>6){ //Comprova el 4 en linea nomï¿½s si hi ha ja 4 fitxes d'un jugador al tauler
 
         if(finalJoc(arrel->tauler)==1){ //Guanya la persona
         int tornar; //Variable per poder triar si repetir partides
-        system("cls");
+        system("clear");
         imprimirTauler(arrel->tauler);
 
         exitMenuGuanyador();
@@ -723,7 +723,7 @@ Node *arrel=malloc(sizeof(Node));
              ferMinimaxRecursiu(arrel,1,profunditat);
              trobarTauler(arrel);
 
-             system("cls");
+             system("clear");
              imprimirTauler(arrel->tauler);
              esborrarArbre(arrel,1,profunditat);
 
@@ -735,7 +735,7 @@ Node *arrel=malloc(sizeof(Node));
 
     if(finalJoc(arrel->tauler)==0){ //S'esgoten els iterats del bucle i no hi ha cap guanyador, per tant hi ha empat
         int tornar;
-        system("cls");
+        system("clear");
         imprimirTauler(arrel->tauler);
         exitMenuEmpat();
         scanf("%i",&tornar);
